@@ -1,5 +1,8 @@
 package ar.edu.undec.plantas.usecaseUnitTest;
 
+//import ar.edu.undec.plantas.core.usecase.ConsultarPlantasUseCase;
+import ar.edu.undec.plantas.core.dominio.Planta;
+import ar.edu.undec.plantas.core.repositorio.IConsultarPlantasRepositorio;
 import ar.edu.undec.plantas.core.usecase.ConsultarPlantasUseCase;
 import org.junit.jupiter.api.Assertions;
 import org.junit.jupiter.api.Test;
@@ -25,8 +28,17 @@ public class ConsultarPlantasUseCaseUnitTest {
         Assertions.assertFalse(consultarPlantasUseCase.consultarPlantas().isEmpty());
     }
 
+/*
+
     @Test
     void consultarPlantas_NoExistenPlantas_DevuelveColeccionVacia(){
-        //Completar test
+        ConsultarPlantasUseCase consultarPlantasUseCase=new ConsultarPlantasUseCase(consultarPlantasRepositorio);
+        when(consultarPlantasRepositorio.obtenerPlantas()).thenReturn(Collections.singletonList(Planta.instancia(null,null,null,null,10)));
+
+        Assertions.assertTrue(consultarPlantasUseCase.consultarPlantas().isEmpty());
     }
+
+
+ */
+
 }
