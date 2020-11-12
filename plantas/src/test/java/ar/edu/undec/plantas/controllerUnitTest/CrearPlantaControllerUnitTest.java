@@ -21,6 +21,7 @@ import static org.mockito.Mockito.when;
 @SpringBootTest
 public class CrearPlantaControllerUnitTest {
     private ICrearPlantaInput crearPlantaInput;
+    /*
    @Test
     public void crearPlanta_PlantaNoExiste_Devuelve200() throws PlantaExisteException {
         PlantaDTO laPlantaDTO=new PlantaDTO("Erythrina crista-galli","Ceibo","Faboideae","Primavera",10);
@@ -32,7 +33,7 @@ public class CrearPlantaControllerUnitTest {
         Assertions.assertTrue(resultado);
     }
 
-/*
+
     @Test
     public void crearPlanta_PlantaExisteException_Devuelve412() throws PlantaExisteException {
         //Completar Test
