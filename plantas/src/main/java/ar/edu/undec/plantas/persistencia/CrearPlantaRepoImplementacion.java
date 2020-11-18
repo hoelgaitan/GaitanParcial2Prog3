@@ -20,7 +20,7 @@ public class CrearPlantaRepoImplementacion implements ICrearPlantaRepositorio {
 
     @Override
     public boolean guardarPlanta(Planta laPlanta) {
-        if (existePlanta(laPlanta.getNombreCientifico())) {
+        if (!existePlanta(laPlanta.getNombreCientifico())) {
             PlantaEntity plantaEntity = new PlantaEntity();
 
             plantaEntity.setAlturamaxima(laPlanta.getAlturaMaxima());
