@@ -30,15 +30,18 @@ public class CrearPlantaUseCaseUnitTest {
         Assertions.assertTrue(resultado);
     }
 
+
     @Test
-    public void crearPlanta_PlantaExiste_PlantaExisteException(){
+    public void crearPlanta_PlantaExiste_PlantaExisteException() throws PlantaExisteException {
+        //Completar Test
         Planta laPlanta=Planta.instancia("Erythrina crista-galli","Ceibo","Faboideae","Primavera",10);
+        when(crearPlantaRepositorio.existePlanta("Erythrina crista-galli")).thenReturn(true);
+
         CrearPlantaUseCase crearPlantaUseCase=new CrearPlantaUseCase(crearPlantaRepositorio);
 
-        when(crearPlantaRepositorio.existePlanta("Erythrina crista-galli")).thenReturn(true);
-        Assertions.assertThrows(PlantaExisteException.class,()-> crearPlantaUseCase.crearPlanta(laPlanta));
-
+        assertThrows(PlantaExisteException.class,() -> crearPlantaUseCase.crearPlanta(laPlanta));
     }
+
 
 
 

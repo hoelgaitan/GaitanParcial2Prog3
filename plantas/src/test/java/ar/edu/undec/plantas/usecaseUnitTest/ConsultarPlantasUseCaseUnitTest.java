@@ -28,17 +28,12 @@ public class ConsultarPlantasUseCaseUnitTest {
         Assertions.assertFalse(consultarPlantasUseCase.consultarPlantas().isEmpty());
     }
 
-/*
-
     @Test
     void consultarPlantas_NoExistenPlantas_DevuelveColeccionVacia(){
+        //Completar test
         ConsultarPlantasUseCase consultarPlantasUseCase=new ConsultarPlantasUseCase(consultarPlantasRepositorio);
-        when(consultarPlantasRepositorio.obtenerPlantas()).thenReturn(Collections.singletonList(Planta.instancia(null,null,null,null,10)));
-
-        Assertions.assertTrue(consultarPlantasUseCase.consultarPlantas().isEmpty());
+        when(consultarPlantasRepositorio.obtenerPlantas()).thenReturn(null);
+        Assertions.assertNull(consultarPlantasUseCase.consultarPlantas());
     }
-
-
- */
 
 }
