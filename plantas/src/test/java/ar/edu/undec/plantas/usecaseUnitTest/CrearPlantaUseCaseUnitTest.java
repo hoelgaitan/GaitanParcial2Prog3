@@ -1,6 +1,9 @@
 package ar.edu.undec.plantas.usecaseUnitTest;
 
 import ar.edu.undec.plantas.core.dominio.Planta;
+import ar.edu.undec.plantas.core.exception.CategoriaNuloException;
+import ar.edu.undec.plantas.core.exception.NombreCientificoNuloException;
+import ar.edu.undec.plantas.core.exception.NombreVulgarNuloException;
 import ar.edu.undec.plantas.core.exception.PlantaExisteException;
 import ar.edu.undec.plantas.core.repositorio.ICrearPlantaRepositorio;
 import ar.edu.undec.plantas.core.usecase.CrearPlantaUseCase;
@@ -21,7 +24,7 @@ public class CrearPlantaUseCaseUnitTest {
     ICrearPlantaRepositorio crearPlantaRepositorio;
 
     @Test
-    public void crearPlanta_PlantaNoExiste_CreaPlanta() throws PlantaExisteException {
+    public void crearPlanta_PlantaNoExiste_CreaPlanta() throws PlantaExisteException, NombreVulgarNuloException, CategoriaNuloException, NombreCientificoNuloException {
         Planta laPlanta=Planta.instancia("Erythrina crista-galli","Ceibo","Faboideae","Primavera",10);
         when(crearPlantaRepositorio.existePlanta("Erythrina crista-galli")).thenReturn(false);
         when(crearPlantaRepositorio.guardarPlanta(laPlanta)).thenReturn(true);
